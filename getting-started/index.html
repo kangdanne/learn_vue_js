@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app"></div>
+    <div id="app2"></div>
+
+    <script>
+      // jQuery문법에선 $("#app")
+      var div = document.querySelector("#app");
+      console.log(div);
+
+      // DOM을 조작함
+      div.innerHTML = "hello world";
+      // 서비스 구현시 위와 같이 일일이 내용을 작성하지 않음.
+
+      // 👇 일반적인 웹 개발 방식
+      var div2 = document.querySelector("#app2");
+      var str = "hello Dan:d world";
+      div2.innerHTML = str;
+      var str = "hello Dan:d world!!!"; // 적용 안됨
+      div2.innerHTML = str;
+    </script>
+  </body>
+</html>
