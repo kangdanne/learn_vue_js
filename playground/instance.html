@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+      // 인스턴스 만들 때 : new Vue()
+      var vm = new Vue({
+        // body태그 안에서 #app를 찾아서 인스턴스를 붙임
+        // el: 를 지정해줘야한 #app안에서 vue의 기능과 속성들이 유효함.
+        el: "#app",
+        data: {
+          message: "hi",
+        },
+
+        // [인스턴스에서 사용가능한 속성, API]
+        el: {},
+        template: {},
+        data: {},
+        methods: {},
+        created: function () {},
+        watch: {},
+      });
+
+      /*
+
+      var options = {
+        el: "#app",
+        data: {
+          message: "hi",
+        },
+        methodes: {
+
+        },
+      };
+
+      var vm = new Vue(option);
+
+      원래 이렇게 작성하는 것과 같지만 공식문서에서는
+      변수로 구분하지 않고 위와같이 객체를 인스턴스에 바로 넣는 방법을 추천
+      가독성의 이유
+      */
+    </script>
+  </body>
+</html>
