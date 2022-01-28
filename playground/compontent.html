@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <app-header></app-header>
+      <app-content></app-content>
+      <app-footer></app-footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+      // 컴포넌트를 등록하는 방법
+
+      // 🧩전역 컴포넌트 - 실무에서는 전역으로 사용할 일이 거의 없음
+      // Vue.component('컴포넌트 이름', 컴포넌트 내용);
+      Vue.component("app-header", {
+        // template - 컴포넌트가 표현되는 마크업이나 스타일을 의미
+        template: "<h1>Header</h1>",
+      });
+
+      Vue.component("app-content", {
+        template: "<div>content</div>",
+      });
+
+      new Vue({
+        el: "#app",
+        // 🧩지역 컴포넌트 등록
+        components: {
+          // 'key' : 'value'
+          // '컴포넌트 이름' : 컴포넌트 내용
+          "app-footer": {
+            template: "<footer>Footer</footer>",
+          },
+        },
+      });
+    </script>
+  </body>
+</html>
