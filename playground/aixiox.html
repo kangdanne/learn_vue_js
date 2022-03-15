@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Axios</title>
+  </head>
+  <body>
+    <div id="app">
+      <button v-on:click="getData">get user</button>
+      <div>{{ users }}</div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script>
+      new Vue({
+        el: "#app",
+        data: {
+          users: [],
+        },
+        methods: {
+          getData: function () {
+            console.log("밖", this);
+            var vm = this; // new Vue()인스턴스. 즉 컴포넌트를 바라보는 this
+            axios
+              .get("https://jsonplaceholder.typicode.com/users/") //js로 데이터 요첯 시 테스트 할 수 있는 사이트
+              .then(function (response) {
+                console.log(response.data);
+                console.log("안", this);
+                // this.users = response.data;
+                /* 
+                  이렇게 작성하면 안됨. 여기서의 this는  호출 전의 this와 다름.
+                 비동기 처리를 하면서 실행 컨택스트가 바뀌며 this에 대한 내용도 바뀌기 때문
+                 */
+                vm.users = response.data;
+              })
+              .catch(function (error) {
+                console.log(error);
+              });
+          },
+        },
+      });
+    </script>
+  </body>
+</html>
