@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- 데이터 바인딩 : 뷰 인스턴스에서 정의한 속성을 화면에 표현. 
+        가장 기본적으로 '{{}}' (콧수염 괄호, Mustache Tag)로 표현-->
+    <div id="app">
+      <p>{{ num }}</p>
+      <p>{{ doubleNum }}</p>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+      new Vue({
+        el: "#app",
+        data: {
+          num: 10,
+          // doubleNum: 10 * 2,
+          // num에 따라 가변하는 값을 원할 때, 일일이 데이터를 함께 수정하는 방식은 피하기
+        },
+        // computed속성 사용 : 계산된 속성
+        computed: {
+          doubleNum: function () {
+            return this.num * 2;
+          },
+        },
+      });
+    </script>
+  </body>
+</html>
