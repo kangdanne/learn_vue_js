@@ -10,7 +10,8 @@
     <!-- 데이터 바인딩 : 뷰 인스턴스에서 정의한 속성을 화면에 표현. 
         가장 기본적으로 '{{}}' (콧수염 괄호, Mustache Tag)로 표현-->
     <div id="app">
-      <p>{{ num }}</p>
+      <p v-bind:id="uuid" v-bind:class="name">{{ num }}</p>
+      <!--html속성에 v-bind를 붙이면 data에서 관리하는 특정 데이터의 값이 연결된다.-->
       <p>{{ doubleNum }}</p>
     </div>
 
@@ -22,6 +23,8 @@
           num: 10,
           // doubleNum: 10 * 2,
           // num에 따라 가변하는 값을 원할 때, 일일이 데이터를 함께 수정하는 방식은 피하기
+          uuid: "abc1234",
+          name: "text-blue",
         },
         // computed속성 사용 : 계산된 속성
         computed: {
