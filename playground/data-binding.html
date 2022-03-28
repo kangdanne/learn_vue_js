@@ -19,6 +19,9 @@
       <div v-else>test user has been logged in</div>
       <!--v-show의 값이 false인 경우 태그는 생성되지만, display:none으로 처리됨-->
       <div v-show="loading">Loading...</div>
+      <!--v-model을 사용해 input내용은 p테그에 출력-->
+      <input type=text" v-model="message">
+      <p>{{ message }}</p>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
@@ -32,6 +35,7 @@
           uuid: "abc1234",
           name: "text-blue",
           loading: true,
+          message: "",
         },
         // computed속성 사용 : 계산된 속성
         computed: {
