@@ -13,6 +13,12 @@
       <p v-bind:id="uuid" v-bind:class="name">{{ num }}</p>
       <!--html속성에 v-bind를 붙이면 data에서 관리하는 특정 데이터의 값이 연결된다.-->
       <p>{{ doubleNum }}</p>
+      <!--v-if를 사용해 조건문을 만들 수 있다.-->
+      <!--if에서 false는 태그 자체를 만들지 않음-->
+      <div v-if="loading">Loading...</div>
+      <div v-else>test user has been logged in</div>
+      <!--v-show의 값이 false인 경우 태그는 생성되지만, display:none으로 처리됨-->
+      <div v-show="loading">Loading...</div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
@@ -25,6 +31,7 @@
           // num에 따라 가변하는 값을 원할 때, 일일이 데이터를 함께 수정하는 방식은 피하기
           uuid: "abc1234",
           name: "text-blue",
+          loading: true,
         },
         // computed속성 사용 : 계산된 속성
         computed: {
