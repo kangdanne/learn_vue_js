@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style>
+      .warning {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <!-- <p v-bind:class="cname">Hello</p> -->
+
+      <p v-bind:class="{ warning : isError }">Hello</p>
+      <!--isErro가 true일때는 wraing이라는 class를 가진다-->
+      <!--isErro가 fasle일때는 wraing이라는 class가 없다-->
+
+      <p v-bind:class="errorTextColor">Bye</p>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+      new Vue({
+        el: "#app",
+        data: {
+          // cname: 'blue-text',
+          isError: false,
+        },
+        computed: {
+          //
+          errorTextColor: function () {
+            // if (isError) {
+            //   return 'warning'
+            // } else {
+            //   return null;
+            // }
+
+            return this.isError ? "warning" : null;
+            // computed에서 data에 접근하려면 this를 붙여줘야한다!
+          },
+        },
+      });
+    </script>
+  </body>
+</html>
