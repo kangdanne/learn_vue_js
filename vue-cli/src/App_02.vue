@@ -1,7 +1,6 @@
 <template>
   <div>
-    <!-- <app-header v:bind:props속성이름="상위 컴포넌트 데이터 이름"></app-header> -->
-    <app-header v:bind:propsdata="str"></app-header>
+    <app-header></app-header>
     <!--template의 html 내부 구조는 최상위 레벨에 하나의 태그 존재해야함-->
     {{ str }}
   </div>
@@ -27,7 +26,7 @@ var AppHeader = {
 export default {
   data: function () {
     return {
-      str: "Header",
+      str: "hi",
     };
   },
   components: {
