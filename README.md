@@ -28,3 +28,6 @@
 <br>
 <br>
 ☺︎단디하자.
+<br>
+vue-clie-service serve
+npm run serve
